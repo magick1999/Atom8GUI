@@ -1,13 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import HomePage from './HomePage/HomePage';
+import MemberDashboard from './MemeberDashboard/MemberDashboard';
+import NavBar from './NavBar/NavBar'
+import Home from "./Home/Home";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <HomePage/>
+          <NavBar/>
       </header>
+        <div>
+            <MemberDashboard/>
+        </div>
     </div>
   );
 }
