@@ -53,11 +53,11 @@ export default function NavBar() {
                         </Link>
                     </nav>
                     <div>
+                        {/*<Button href="#" color="primary" variant="outlined" className={classes.link}>*/}
+                            {/*Login*/}
+                        {/*</Button>*/}
                         <Button href="#" color="primary" variant="outlined" className={classes.link}>
-                            Login
-                        </Button>
-                        <Button href="#" color="primary" variant="outlined" className={classes.link}>
-                            Sign Up
+                            Log Out
                         </Button>
                     </div>
                 </Toolbar>

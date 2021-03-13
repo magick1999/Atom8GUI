@@ -63,10 +63,18 @@ export default function MemberDashboard() {
     const classes = useStyles();
     const [deviceList, setDeviceList] = useState([]);
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(json => setDeviceList(json))
+        const request = {
+            method: 'GET',
+            headers: { 'Origin': '*' }
+        };
+
+        // fetch('http://atom8api-dev.eu-central-1.elasticbeanstalk.com/v1/GetAllPlants', request)
+        fetch('https://jsonplaceholder.typicode.com/posts', request)
+        .then(response => response.json())
+            .then(json => setDeviceList(json));
         }
+
+
     );
     return (
         <React.Fragment>

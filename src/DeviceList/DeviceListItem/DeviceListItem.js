@@ -83,6 +83,7 @@ export default function FolderList(props) {
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                color="secondary"
             >
                 <StyledMenuItem>
                     <ListItemIcon>
@@ -92,7 +93,7 @@ export default function FolderList(props) {
                     <Switch
                         checked={state.checkedA}
                         onChange={handleChange}
-                        color="secondary"
+                        color="primary"
                         name="checkedA"
                         inputProps={{ 'aria-label': 'primary checkbox' }}
                     />
@@ -105,7 +106,7 @@ export default function FolderList(props) {
                     <Switch
                         checked={state.checkedB}
                         onChange={handleChange}
-                        color="secondary"
+                        color="primary"
                         name="checkedB"
                         inputProps={{ 'aria-label': 'primary checkbox' }}
                     />
