@@ -3,8 +3,6 @@ import MemberDashboard from './MemeberDashboard/MemberDashboard';
 import NavBar from './NavBar/NavBar'
 import Home from "./Home/Home";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
 import './App.css';
 
 const theme = createMuiTheme({

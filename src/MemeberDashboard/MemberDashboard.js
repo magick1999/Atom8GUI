@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -57,25 +57,25 @@ const cards = [
     {image: <AddBoxIcon/>, text: 'Add Device', addSwitch: false},
     // {image: <NotificationsIcon/>, text: 'Notifications', addSwitch: true},
     // {image: <ListIcon/>, text: 'List Devices', addSwitch: false}
-    ];
+];
 
 export default function MemberDashboard() {
     const classes = useStyles();
     const [deviceList, setDeviceList] = useState([]);
-    useEffect(()=>{
-        const request = {
-            method: 'GET',
-            headers: { 'Origin': '*' }
-        };
+    useEffect(() => {
+            const request = {
+                method: 'GET',
+                headers: {'Origin': '*'}
+            };
 
-        // fetch('http://atom8api-dev.eu-central-1.elasticbeanstalk.com/v1/GetAllPlants', request)
-        fetch('https://jsonplaceholder.typicode.com/posts', request)
-        .then(response => response.json())
-            .then(json => setDeviceList(json));
+            // window.fetch('https://jsonplaceholder.typicode.com/posts', request)
+            fetch('http://atom8api-dev.eu-central-1.elasticbeanstalk.com/v1/GetAllPlants', request)
+                .then(response => response.json())
+                .then(json => setDeviceList(json));
         }
 
 
-    );
+        , []);
     return (
         <React.Fragment>
             <CssBaseline/>
@@ -98,9 +98,9 @@ export default function MemberDashboard() {
                     />
                     {cards.map((card) => {
                         return (<div key={card.text}><BasicCard
-                            image = {card.image}
-                            text = {card.text}
-                            addSwitch = {card.addSwitch}
+                            image={card.image}
+                            text={card.text}
+                            addSwitch={card.addSwitch}
                         /></div>)
                     })}
                 </Box>

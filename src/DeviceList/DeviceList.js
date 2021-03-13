@@ -33,7 +33,7 @@ export default function PinnedSubheaderList(props) {
                     <ul className={classes.ul}>
                         <ListSubheader>{`House ID: ${sectionId}`}</ListSubheader>
                         {props.deviceList.map((item) => (
-                            <div key={`item-${sectionId}-${item.id}`}>
+                            <div key={`item-${sectionId}-${item.writtenId}`}>
                                 <DeviceListItem
                                     device={item}
                                 />

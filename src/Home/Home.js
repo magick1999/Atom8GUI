@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Logo from '../resources/logo-mare.png'
+import Tipa from '../resources/pozaPS.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
             width: theme.spacing(16),
             height: theme.spacing(16),
         },
+        flexDirection: 'column',
         justifyContent: 'space-around'
     },
     card: {
