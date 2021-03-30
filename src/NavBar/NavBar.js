@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import {makeStyles} from '@material-ui/core/styles';
-import Logo from '../resources/logo-mare.png'
+import Logo from '../resources/logo-mare.png';
 
 const useStyles = makeStyles((theme) => ({
     '@global': {
@@ -32,35 +32,80 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function NavBar() {
+export default function NavBar(props) {
+
     const classes = useStyles();
+    const homeNav = () => {
+        return (
+            <Toolbar className={classes.toolbar}>
+                <Box m={1}>
+                    <img src={Logo} alt='Logo' width={150} height={75}/>
+                </Box>
+                <nav>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link} onClick={() => props.changeScreen('Home')}>
+                        Home
+                    </Link>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                        Buy
+                    </Link>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                        Contact&Support
+                    </Link>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                        Meet the Team
+                    </Link>
+                </nav>
+                <div>
+                    <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={() => props.changeScreen('SignIn')}>
+                        Sign In
+                    </Button>
+                    <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={() => props.changeScreen('SignUp')}>
+                        Sign Up
+                    </Button>
+                </div>
+            </Toolbar>
+        );
+    };
+
+    const dashboardNav = () => {
+        return (
+            <Toolbar className={classes.toolbar}>
+                <Box m={1}>
+                    <img src={Logo} alt='Logo' width={150} height={75}/>
+                </Box>
+                <nav>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link} onClick={() => props.changeScreen('Dashboard')}>
+                        Dashboard
+                    </Link>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                        Buy
+                    </Link>
+                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                        Contact&Support
+                    </Link>
+                </nav>
+                <div>
+                    <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={() => props.changeScreen('LogOut')}>
+                        Log Out
+                    </Button>
+                </div>
+            </Toolbar>
+        );
+    };
+
+    function CustomNavigation(props) {
+        console.log(props);
+        const type = props.currentRoute;
+        if (type === 'Home' || type === 'LogOut') {
+            return homeNav();
+        } else {
+            return dashboardNav();
+        }
+    }
 
     return (
-            <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
-                <Toolbar className={classes.toolbar}>
-                    <Box m={1}>
-                        <img src={Logo} alt='Logo' width={150} height={75}/>
-                    </Box>
-                    <nav>
-                        <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-                            Home
-                        </Link>
-                        <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-                            Buy
-                        </Link>
-                        <Link variant="button" color="textPrimary" href="#" className={classes.link}>
-                            Support
-                        </Link>
-                    </nav>
-                    <div>
-                        {/*<Button href="#" color="primary" variant="outlined" className={classes.link}>*/}
-                            {/*Login*/}
-                        {/*</Button>*/}
-                        <Button href="#" color="primary" variant="outlined" className={classes.link}>
-                            Log Out
-                        </Button>
-                    </div>
-                </Toolbar>
-            </AppBar>
+        <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+            <CustomNavigation currentRoute={props.currentRoute}/>
+        </AppBar>
     );
 }

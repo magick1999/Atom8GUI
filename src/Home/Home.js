@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Logo from '../resources/logo-mare.png'
+import Flower from '../resources/cactus/cactusFericit.png'
 import Tipa from '../resources/pozaPS.png'
 
 
@@ -44,8 +44,8 @@ export default function Home() {
             <Card className={classes.card}>
                 <CardContent>
                     <img
-                        src={Logo}
-                        alt='Logo' width={500} height={300}
+                        src={Flower}
+                        alt='Logo' width={250} height={300}
                     />
                     <Typography variant="h5" component="h2">
                         Your Smart Solution To Home Automation

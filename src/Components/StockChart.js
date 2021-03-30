@@ -24,7 +24,7 @@ const buildData = (chartData) => {
     var labelValues = [];
     for (i = chartData[0].pins.length - 1; i > chartData[0].pins.length - limit ; i-=2) {
         var tempLabel = chartData[0].pins[i].creationTime;
-        tempLabel = tempLabel.slice(11,16);
+        tempLabel = tempLabel.slice(11,19);
         labelValues.push(tempLabel)
     }
     labelValues = labelValues.reverse();

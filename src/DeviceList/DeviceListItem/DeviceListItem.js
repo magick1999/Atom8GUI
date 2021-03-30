@@ -93,7 +93,6 @@ export default function FolderList(props) {
         console.log(deviceData);
     }, []);
     const displayGraph = () => {
-
         setGraph(true);
     };
 
