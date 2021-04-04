@@ -15,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
             listStyle: 'none',
         },
     },
-    appBar: {
-        borderBottom: `1px solid ${theme.palette.divider}`,
-    },
     toolbar: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -28,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         margin: theme.spacing(1, 1.5),
+        backgroundColor: 'white',
     },
 
 }));
@@ -42,18 +40,18 @@ export default function NavBar(props) {
                     <img src={Logo} alt='Logo' width={150} height={75}/>
                 </Box>
                 <nav>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link} onClick={() => props.changeScreen('Home')}>
+                    <Button className={classes.link} onClick={() => props.changeScreen('Home')}>
                         Home
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                    </Button>
+                    <Button className={classes.link}>
                         Buy
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                    </Button>
+                    <Button className={classes.link}>
                         Contact&Support
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                    </Button>
+                    <Button className={classes.link}>
                         Meet the Team
-                    </Link>
+                    </Button>
                 </nav>
                 <div>
                     <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={() => props.changeScreen('SignIn')}>
@@ -74,15 +72,15 @@ export default function NavBar(props) {
                     <img src={Logo} alt='Logo' width={150} height={75}/>
                 </Box>
                 <nav>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link} onClick={() => props.changeScreen('Dashboard')}>
+                    <Button className={classes.link} onClick={() => props.changeScreen('Dashboard')}>
                         Dashboard
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                    </Button>
+                    <Button className={classes.link}>
                         Buy
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" className={classes.link}>
+                    </Button>
+                    <Button className={classes.link}>
                         Contact&Support
-                    </Link>
+                    </Button>
                 </nav>
                 <div>
                     <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={() => props.changeScreen('LogOut')}>
@@ -104,8 +102,6 @@ export default function NavBar(props) {
     }
 
     return (
-        <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
-            <CustomNavigation currentRoute={props.currentRoute}/>
-        </AppBar>
+        <CustomNavigation currentRoute={props.currentRoute}/>
     );
 }
